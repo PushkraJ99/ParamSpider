@@ -16,7 +16,7 @@
   <a href="# [Snake4Readme]"> 💀 Fun </a> •
 </p>
 
-![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/paramspider.png?raw=true)
+![paramspider](https://github.com/PushkraJ99/ParamSpider/blob/master/static/paramspider.png?raw=true)
 <br><br>
 
 ParamSpider Allows you to Fetch URLs Related to any Domain or a List of Domains from Wayback Achives. It Filters Out "boring" URLs, Allowing you to Focus on the Ones that Matter the Most.
@@ -71,13 +71,13 @@ Here are a Few Examples of How to Use `paramspider`
 ```sh
    paramspider -d domain.com --subs
 ```
-![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/domainscan.png?raw=true)
+![paramspider](https://github.com/PushkraJ99/ParamSpider/blob/master/static/domainscan.png?raw=true)
 
 - Save URLs Output for a Single Domain
 ```sh
   paramspider -d domain.com --subs -o fuzz.txt
 ```
-![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/output.png?raw=true)
+![paramspider](https://github.com/PushkraJ99/ParamSpider/blob/master/static/output.png?raw=true)
 
 - Discover URLs for Multiple Domains from a File
 ```sh
@@ -88,7 +88,7 @@ Here are a Few Examples of How to Use `paramspider`
 ```sh
   paramspider -l list.txt --subs
 ```
-![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/listscan.png?raw=true)
+![paramspider](https://github.com/PushkraJ99/ParamSpider/blob/master/static/listscan.png?raw=true)
 
 - Stream URLs on Terminal
 ```sh 
