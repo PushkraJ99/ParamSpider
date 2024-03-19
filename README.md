@@ -1,88 +1,145 @@
+
 <h1 align="center">
-    paramspider
+    🔱 ParamSpider
   <br>
 </h1>
 
-<h4 align="center">  Mining URLs from dark corners of Web Archives for bug hunting/fuzzing/further probing </h4>
+<h4 align="center">  Mining URLs from Dark Corners of Web Archives for Bug Hunting / Fuzzing / Further Probing </h4>
 
-<p align="center">
-  <a href="#about">📖 About</a> •
-  <a href="#installation">🏗️ Installation</a> •
-  <a href="#usage">⛏️ Usage</a> •
-  <a href="#examples">🚀 Examples</a> •
-  <a href="#contributing">🤝 Contributing</a> •
+<p align="center">•
+  <a href="#about"> 📖 About </a> •
+  <a href="#installation"> 🏗️ Installation </a> •
+  <a href="#usage"> 🛠 Usage </a> •
+  <a href="#examples"> 🚀 Examples </a> •
+  <a href="#contributing"> 🤝 Contributing </a> •
+  <a href="#UPGRADED BY"> 🥷🏻 Social </a> •
+  <a href="# [Snake4Readme]"> 💀 Fun </a> •
 </p>
 
+![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/paramspider.png?raw=true)
+<br><br>
 
-![paramspider](https://github.com/devanshbatham/ParamSpider/blob/master/static/paramspider.png?raw=true)
+ParamSpider Allows you to Fetch URLs Related to any Domain or a List of Domains from Wayback Achives. It Filters Out "boring" URLs, Allowing you to Focus on the Ones that Matter the Most.
 
-## About
+---
 
-`paramspider` allows you to fetch URLs related to any domain or a list of domains from Wayback achives. It filters out "boring" URLs, allowing you to focus on the ones that matter the most.
+### 📖 About
 
-## Installation
+- Finds Parameters From Web Archives of the Entered Domain.
+- Finds Parameters from Subdomains as Well.
+- Gives Support to Exclude URLs with Specific Extensions.
+- Saves the Output Result in a Nice and Clean Manner.
+- It Mines the Parameters from Web Archives ( Without Interacting with the Target Host )
+- New Features Added 
+- Scanning for Subdomains of Target Domain OR Target Domain List
+- Saving Combined Output of Domain List with Separate Domain Wise URLs and Combined URLs
 
-To install `paramspider`, follow these steps:
+---
+
+## 🏗️ Installation
+To Install `paramspider`, Follow These Steps:
 
 ```sh
-git clone https://github.com/devanshbatham/paramspider
-cd paramspider
+git clone https://github.com/PushkraJ99/ParamSpider
+cd ParamSpider/paramspider
 pip install .
 ```
-
-## Usage
-
-To use `paramspider`, follow these steps:
-
+If You Are Using Kali Linux and Getting Error `paramspider not found` try This Command
 ```sh
-paramspider -d example.com
+sudo cp ~/.local/bin/paramspider /usr/local/bin/
 ```
 
-## Examples
+---
 
-Here are a few examples of how to use `paramspider`:
+## 💀 Usage
+<b> To Use `paramspider`, Follow These Steps </b>
 
-- Discover URLs for a single domain:
+```sh
+paramspider -d domain.com
+```
 
-  ```sh
-  paramspider -d example.com
-  ```
+---
 
-- Discover URLs for multiple domains from a file:
+## 🚀 Examples
+Here are a Few Examples of How to Use `paramspider`
 
-  ```sh
-  paramspider -l domains.txt
-  ```
+- Discover URLs for a Single Domain
+```sh
+   paramspider -d domain.com
+```
+- Discover URLs for a Single Domain with Subdomains
+```sh
+   paramspider -d domain.com --subs
+```
+![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/domainscan.png?raw=true)
 
-- Stream URLs on the termial:
+- Save URLs Output for a Single Domain
+```sh
+  paramspider -d domain.com --subs -o fuzz.txt
+```
+![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/output.png?raw=true)
 
-    ```sh 
-    paramspider -d example.com -s
-    ```
+- Discover URLs for Multiple Domains from a File
+```sh
+  paramspider -l list.txt
+```
 
-- Set up web request proxy:
+- Discover URLs for Multiple Domains with Subdomains from a File 
+```sh
+  paramspider -l list.txt --subs
+```
+![paramspider](https://github.com/PushkraJ99/ParamSpiderr/blob/main/static/listscan.png?raw=true)
 
-    ```sh
-    paramspider -d example.com --proxy '127.0.0.1:7890'
-    ```
-- Adding a placeholder for URL parameter values (default: "FUZZ"): 
+- Stream URLs on Terminal
+```sh 
+  paramspider -d domain.com -s
+```
 
-  ```sh
-   paramspider -d example.com -p '"><h1>reflection</h1>'
-  ```
+- Set up Web Request Proxy
+```sh
+  paramspider -d domain.com --proxy '127.0.0.1:7890'
+```
 
-## Contributing
+- Adding a Placeholder for URL Parameter Values (default: "FUZZ")
+```sh
+  paramspider -d domain.com -p '"><h1>reflection</h1>'
+```
 
-Contributions are welcome! If you'd like to contribute to `paramspider`, please follow these steps:
+---
 
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes and commit them.
-4. Submit a pull request.
+## 🤝 Contributing
+Contributions are Welcome! If you'd like to Contribute to `paramspider` Please Follow These Steps
 
+1. Fork the Repository.
+2. Create a New Branch.
+3. Make Your Changes and Commit them.
+4. Submit a pPull Request.
 
-## Star History
+---
 
-[![Star History Chart](https://api.star-history.com/svg?repos=devanshbatham/paramspider&type=Date)](https://star-history.com/#devanshbatham/paramspider&Date)
+### Author 
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devanshbatham)
 
+---
+
+### 🥷🏻 UPGRADED BY :) 
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PushkraJ99)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=PushkraJ99) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pushkaraj-dhuri/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/you_are_not_goodlooking_but_he)
+
+---
+
+## [Snake4Readme](https://github.com/PushkraJ99/Snake4Readme)
+
+<p align="center">
+<img src="https://github.com/PushkraJ99/Snake4Readme/blob/main/Snake4Readme/grid-snake.svg">
+</p><br>
+
+[![](https://visitcount.itsvg.in/api?id=PushkraJ99&icon=8&color=12)](https://visitcount.itsvg.in)
+
+<p align="center"> 
+  <b> Visitor Count </b><br>
+  <img src="https://profile-counter.glitch.me/PushkraJ99/count.svg" />
+</p><br>
 
