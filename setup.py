@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='paramspider',
-    version='0.1.0',
+    version='2.0.0',
     author='Devansh Batham',
     author_email='devanshbatham009@gmail.com',
-    description='Mining parameters from dark corners of Web Archives',
+    description='Mining Parameters from Dark Corners of Web Archives',
     packages=find_packages(),
     install_requires=[
         'requests',
