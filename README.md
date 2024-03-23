@@ -47,7 +47,7 @@ paramspider -h
 ```
 OR
 ```sh
-git clone https://github.com/PushkraJ99/ParamSpider ; cd ParamSpider pip install . ; paramspider -h
+git clone https://github.com/PushkraJ99/ParamSpider ; cd ParamSpider ; pip install . ; paramspider -h
 ```
 
 If You Are Using Kali Linux and Getting Error `paramspider not found` try This Command
