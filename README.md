@@ -7,13 +7,13 @@
 <h4 align="center">  Mining URLs from Dark Corners of Web Archives for Bug Hunting / Fuzzing / Further Probing </h4>
 
 <p align="center">•
-  <a href="#about"> 📖 About </a> •
-  <a href="#installation"> 🏗️ Installation </a> •
-  <a href="#usage"> 🛠 Usage </a> •
-  <a href="#examples"> 🚀 Examples </a> •
-  <a href="#contributing"> 🤝 Contributing </a> •
-  <a href="#UPGRADED BY"> 🥷🏻 Social </a> •
-  <a href="# [Snake4Readme]"> 💀 Fun </a> •
+  <a href="#-about"> 📖 About </a> •
+  <a href="#-installation"> 🏗️ Installation </a> •
+  <a href="#-usage"> 🛠 Usage </a> •
+  <a href="#-examples"> 🚀 Examples </a> •
+  <a href="#-contributing"> 🤝 Contributing </a> •
+  <a href="#-upgraded-by-"> 🥷🏻 Social </a> •
+  <a href="#snake4readme"> 💀 Fun </a> •
 </p>
 
 ![paramspider](https://github.com/PushkraJ99/ParamSpider/blob/master/static/paramspider.png?raw=true)
@@ -36,7 +36,7 @@ ParamSpider Allows you to Fetch URLs Related to any Domain or a List of Domains 
 
 ---
 
-## 🏗️ Installation
+## 📥 Installation
 To Install `paramspider`, Follow These Steps:
 
 ```sh
