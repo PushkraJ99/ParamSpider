@@ -13,7 +13,7 @@
   <a href="#-examples"> 🚀 Examples </a> •
   <a href="#-contributing"> 🤝 Contributing </a> •
   <a href="#-upgraded-by-"> 🥷🏻 Social </a> •
-  <a href="#-fun"> 💀 Fun </a> •
+  <a href="#-just-4-fun"> 💀 Fun </a> •
 </p>
 
 ![paramspider](https://github.com/PushkraJ99/ParamSpider/blob/master/static/paramspider.png?raw=true)
@@ -123,7 +123,7 @@ Contributions are Welcome! If you'd like to Contribute to `paramspider` Please F
 
 ---
 
-### Author 
+### 🫣 Author 
 [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devanshbatham)
 
 ---
@@ -135,14 +135,14 @@ Contributions are Welcome! If you'd like to Contribute to `paramspider` Please F
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/you_are_not_goodlooking_but_he)
 
 ---
-### 🤗 Fun
-### Stargazers
+### 🤗 JUST 4 FUN
+### ✨ Stargazers
 [![Stargazers repo roster for @PushkraJ99/NucleiFuzzer](https://reporoster.com/stars/dark/notext/PushkraJ99/ParamSpider)](https://github.com/PushkraJ99/ParamSpider/stargazers)
 
-### Forkers 
+### ☢️ Forkers 
 [![Forkers repo roster for @PushkraJ99/ParamSpider](https://reporoster.com/forks/dark/notext/PushkraJ99/ParamSpider)](https://github.com/PushkraJ99/ParamSpider/network/members)
 
-## [Snake4Readme](https://github.com/PushkraJ99/Snake4Readme)
+## 🐍 [Snake4Readme](https://github.com/PushkraJ99/Snake4Readme)
 
 <p align="center">
 <img src="https://github.com/PushkraJ99/Snake4Readme/blob/main/Snake4Readme/grid-snake.svg">
