@@ -152,39 +152,43 @@ def fetch_urls_from_list(list_file, subs):
 
         for domain in domains:
             logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Fetching URLs for {Fore.CYAN + domain + Style.RESET_ALL}")
-            if subs:
-                url = f"https://web.archive.org/cdx/search/cdx?url=*.{domain}/*&output=txt&fl=original&collapse=urlkey&page=/"
-            else:
-                url = f"https://web.archive.org/cdx/search/cdx?url={domain}/*&output=txt&fl=original&collapse=urlkey&page=/"
+            try:
+                if subs:
+                    url = f"https://web.archive.org/cdx/search/cdx?url=*.{domain}/*&output=txt&fl=original&collapse=urlkey&page=/"
+                else:
+                    url = f"https://web.archive.org/cdx/search/cdx?url={domain}/*&output=txt&fl=original&collapse=urlkey&page=/"
 
-            response = client.fetch_url_content(url, None)
-            if response is False:
+                response = client.fetch_url_content(url, None)
+                if response is False:
+                    continue
+
+                response = unquote(response.text)
+                urls = response.split()
+
+                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Found {Fore.GREEN + str(len(urls)) + Style.RESET_ALL} URLs for {Fore.CYAN + domain + Style.RESET_ALL}")
+
+                cleaned_urls = clean_urls(urls, HARDCODED_EXTENSIONS, "FUZZ")
+                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Cleaning URLs for {Fore.CYAN + domain + Style.RESET_ALL}")
+                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Found {Fore.GREEN + str(len(cleaned_urls)) + Style.RESET_ALL} URLs after cleaning")
+                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Extracting URLs with parameters")
+
+                combined_urls.extend(cleaned_urls)
+
+                results_dir = "output"
+                if not os.path.exists(results_dir):
+                    os.makedirs(results_dir)
+
+                result_file = os.path.join(results_dir, f"{domain}.txt")
+
+                with open(result_file, "w") as f:
+                    for url in cleaned_urls:
+                        if "?" in url:
+                            f.write(url + "\n")
+
+                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Saved cleaned URLs to {Fore.CYAN + result_file + Style.RESET_ALL}"+"\n")
+            except Exception as e:
+                logging.error(f"{Fore.RED}[ERROR]{Style.RESET_ALL} Error occurred while fetching URLs for {Fore.CYAN + domain + Style.RESET_ALL}: {e}")
                 continue
-
-            response = unquote(response.text)
-            urls = response.split()
-            
-            logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Found {Fore.GREEN + str(len(urls)) + Style.RESET_ALL} URLs for {Fore.CYAN + domain + Style.RESET_ALL}")
-            
-            cleaned_urls = clean_urls(urls, HARDCODED_EXTENSIONS, "FUZZ")
-            logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Cleaning URLs for {Fore.CYAN + domain + Style.RESET_ALL}")
-            logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Found {Fore.GREEN + str(len(cleaned_urls)) + Style.RESET_ALL} URLs after cleaning")
-            logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Extracting URLs with parameters")
-            
-            combined_urls.extend(cleaned_urls)
-
-            results_dir = "output"
-            if not os.path.exists(results_dir):
-                os.makedirs(results_dir)
-            
-            result_file = os.path.join(results_dir, f"{domain}.txt")
-
-            with open(result_file, "w") as f:
-                for url in cleaned_urls:
-                    if "?" in url:
-                        f.write(url + "\n")
-        
-            logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Saved cleaned URLs to {Fore.CYAN + result_file + Style.RESET_ALL}"+"\n")
 
     # Save combined URLs to a separate file
     combined_output_file = os.path.join(results_dir, "combined.txt")
@@ -193,6 +197,7 @@ def fetch_urls_from_list(list_file, subs):
             f.write(url + "\n")
     logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Saved combined URLs to {Fore.CYAN + combined_output_file + Style.RESET_ALL}")
     print("\u001b[31m[!] Total Execution Time : %ss\u001b[0m" % str((time.time() - start_time))[:-12] +"\n")
+
 
 def main():
     """
