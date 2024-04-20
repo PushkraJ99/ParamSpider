@@ -119,7 +119,7 @@ Contributions are Welcome! If you'd like to Contribute to `paramspider` Please F
 1. Fork the Repository.
 2. Create a New Branch.
 3. Make Your Changes and Commit them.
-4. Submit a pPull Request.
+4. Submit a Pull Request.
 
 ---
 
