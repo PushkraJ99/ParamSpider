@@ -134,17 +134,7 @@ def fetch_and_clean_urls(domain, extensions, stream_output, proxy, placeholder, 
     print("\u001b[31m[!] Total Execution Time : %ss\u001b[0m" % str((time.time() - start_time))[:-12] +"\n")
 
 def fetch_urls_from_list(list_file, subs):
-    """
-    Fetch and clean URLs from a list of domains.
-
-    Args:
-        list_file (str): Path to the file containing a list of domain names.
-        subs (bool): True to include subdomains.
-
-    Returns:
-        None
-    """
-    combined_urls = []
+    combined_urls = set()
     with open(list_file, "r") as f:
         domains = [line.strip().lower().replace('https://', '').replace('http://', '') for line in f.readlines()]
         domains = [domain for domain in domains if domain]  # Remove empty lines
@@ -160,6 +150,7 @@ def fetch_urls_from_list(list_file, subs):
 
                 response = client.fetch_url_content(url, None)
                 if response is False:
+                    logging.error(f"{Fore.RED}[ERROR]{Style.RESET_ALL} Failed to fetch URL content for {Fore.CYAN + domain + Style.RESET_ALL}")
                     continue
 
                 response = unquote(response.text)
@@ -172,7 +163,7 @@ def fetch_urls_from_list(list_file, subs):
                 logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Found {Fore.GREEN + str(len(cleaned_urls)) + Style.RESET_ALL} URLs after cleaning")
                 logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Extracting URLs with parameters")
 
-                combined_urls.extend(cleaned_urls)
+                combined_urls.update(cleaned_urls)
 
                 results_dir = "output"
                 if not os.path.exists(results_dir):
@@ -185,7 +176,7 @@ def fetch_urls_from_list(list_file, subs):
                         if "?" in url:
                             f.write(url + "\n")
 
-                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Saved cleaned URLs to {Fore.CYAN + result_file + Style.RESET_ALL}"+"\n")
+                logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Saved cleaned URLs to {Fore.CYAN + result_file + Style.RESET_ALL}" + "\n")
             except Exception as e:
                 logging.error(f"{Fore.RED}[ERROR]{Style.RESET_ALL} Error occurred while fetching URLs for {Fore.CYAN + domain + Style.RESET_ALL}: {e}")
                 continue
@@ -196,7 +187,8 @@ def fetch_urls_from_list(list_file, subs):
         for url in combined_urls:
             f.write(url + "\n")
     logging.info(f"{Fore.YELLOW}[INFO]{Style.RESET_ALL} Saved combined URLs to {Fore.CYAN + combined_output_file + Style.RESET_ALL}")
-    print("\u001b[31m[!] Total Execution Time : %ss\u001b[0m" % str((time.time() - start_time))[:-12] +"\n")
+    print("\u001b[31m[!] Total Execution Time : %ss\u001b[0m" % str((time.time() - start_time))[:-12] + "\n")
+
 
 
 def main():
