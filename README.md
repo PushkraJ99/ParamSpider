@@ -45,14 +45,19 @@ cd ParamSpider
 pip install .
 paramspider -h
 ```
-OR
+OR Try This One Liner Specially For VPS Users Normal Linux User Also Can Try
 ```sh
-git clone https://github.com/PushkraJ99/ParamSpider ; cd ParamSpider ; pip install . ; paramspider -h
+pip install git+https://github.com/PushkraJ99/ParamSpider
 ```
 
-If You Are Using Kali Linux and Getting Error `paramspider not found` try This Command
+After Installation You Cant Find the `paramspider` installed Location then Try
+```
+whereis paramspider
+```
+
+If You Are Using Kali Linux and Getting Error `paramspider not found` try This Command 
 ```sh
-sudo cp ~/.local/bin/paramspider /usr/local/bin/
+sudo cp paramspider-location /usr/local/bin/
 ```
 
 ---
