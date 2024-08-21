@@ -143,7 +143,7 @@ Contributions are Welcome! If you'd like to Contribute to `paramspider` Please F
 ---
 ### 🤗 JUST 4 FUN
 ### ✨ Stargazers
-[![Stargazers repo roster for @PushkraJ99/NucleiFuzzer](https://reporoster.com/stars/dark/notext/PushkraJ99/ParamSpider)](https://github.com/PushkraJ99/ParamSpider/stargazers)
+[![Stargazers repo roster for @PushkraJ99/ParamSpider](https://reporoster.com/stars/dark/notext/PushkraJ99/ParamSpider)](https://github.com/PushkraJ99/ParamSpider/stargazers)
 
 ### ☢️ Forkers 
 [![Forkers repo roster for @PushkraJ99/ParamSpider](https://reporoster.com/forks/dark/notext/PushkraJ99/ParamSpider)](https://github.com/PushkraJ99/ParamSpider/network/members)
